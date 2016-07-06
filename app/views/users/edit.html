@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block body %}
+<h1>Edit User</h1>
+<form action="/users/{{user['id']}}/edit" method='post'>
+  Name<input type="text" name="name" value="{{user['name']}}"> <!--prepopulated information-->
+  Email<input type="email" name="email" value="{{user['email']}}"> <!--prepopulated information-->
+  <select name="admin_level" value="{{user['admin_level']}}">
+    <option value='0'>Normal</option>
+    <option value='1'>Admin</option>
+  </select>
+  <input type="submit" value="Submit Edits">
+</form>
+{% endblock %}
